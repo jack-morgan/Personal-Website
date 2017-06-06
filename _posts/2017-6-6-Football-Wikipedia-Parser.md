@@ -36,7 +36,7 @@ with open('footballers.csv', 'rt') as f:
       counter += 1
 ```
 
-### Parsing Wikipedia
+#### Parsing Wikipedia
 
 Utilising the Wikipedia library, we can load and access all the data from a Wikipedia page:
 
@@ -44,12 +44,40 @@ Utilising the Wikipedia library, we can load and access all the data from a Wiki
 for footballer_name in footballer_names:
   html_ver = wikipedia.page(footballer_name, None, True, True, True).html()
 ```
+
+##### BeautifulSoup
 Now that the program has access to the information from Wikipedia, we can use BeautifulSoup to parse the page.
 
 ```python
 soup = BeautifulSoup(html_ver, 'html.parser')
+array = []
 ```
 
+By analysing the html code from a Wikipedia page, it is possible to uncover the class name for specific elements on the page. 
+'infobox card' is the class name of the table that Wikipedia uses for the player information. With this information, we can now use BeautifulSoup to extract the specific information required.
+
+```python
+  for tr in soup.find("table", {"class":"infobox vcard"}).findChildren('tr'):
+
+    if tr.text.find("Senior career*") > -1:
+      found = True
+      ignore_next = True
+    elif tr.text.find("National team") > -1:
+      found = False
+      break
+
+    if found == True and ignore_next == False:
+      array.append(tr.text)
+    elif ignore_next == True:
+      ignore_next = False
+```
+The footballer_data list is now updated with the data gathered from the program.
+
+```python
+ footballer_data.append(array)
+  print(array)
+  array.insert(0, footballer_name)
+  ```
 Finally, the data that has been gathered from the parser is saved to the csv file previously created:
 
 ```python
@@ -57,3 +85,7 @@ Finally, the data that has been gathered from the parser is saved to the csv fil
     a = csv.writer(fp)
     a.writerow(array)
 ```
+
+### Conclusion
+
+This small project explores some of the capabilities of Python when used for text mining / parsing. It demonstrates that through the use of logic and experimentation, processes can be made more efficient, and thus in the long term reduce the amount of time spent on a trivial task.
