@@ -6,3 +6,20 @@ After playing numerous knowledge-based football games, it appeared to me that ex
 * BeautifulSoup
 * Wikipedia
 * csv
+
+### Code Walkthrough
+
+The first thing to do is to create a blank csv file
+
+```python
+with open("playerhistory.csv", "w") as fp:
+    a = csv.writer(fp)
+    a.writerow("")
+```
+And also create a blank list, in which the data will be added to.
+
+```python
+footballer_names = []
+footballer_data = []
+```
+
