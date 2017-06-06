@@ -9,14 +9,14 @@ After playing numerous knowledge-based football games, it appeared to me that ex
 
 ### Code Walkthrough
 
-The first thing that needs to be done is to create a blank csv file
+The first thing that needs to be done is to create a blank csv file:
 
 ```python
 with open("playerhistory.csv", "w") as fp:
     a = csv.writer(fp)
     a.writerow("")
 ```
-And also create a blank list, in which the data will be added to.
+And also create a blank list, in which the data will be added to:
 
 ```python
 footballer_names = []
@@ -24,7 +24,7 @@ footballer_data = []
 ```
 #### Automating the input to the program
 
-It is not very efficient to manually have to type in each players name to extract information. Therefore, in order to automate this process, a list of footballers names (csv file) can be passed into the program.
+It is not very efficient to manually have to type in each players name to extract information. Therefore, in order to automate this process, a list of footballers names (csv file) can be passed into the program:
 
 ```python
 with open('footballers.csv', 'rt') as f:
@@ -46,7 +46,7 @@ for footballer_name in footballer_names:
 ```
 
 ##### BeautifulSoup
-Now that the program has access to the information from Wikipedia, we can use BeautifulSoup to parse the page.
+Now that the program has access to the information from Wikipedia, we can use BeautifulSoup to parse the page:
 
 ```python
 soup = BeautifulSoup(html_ver, 'html.parser')
@@ -54,7 +54,7 @@ array = []
 ```
 
 By analysing the html code from a Wikipedia page, it is possible to uncover the class name for specific elements on the page. 
-'infobox card' is the class name of the table that Wikipedia uses for the player information. With this information, we can now use BeautifulSoup to extract the specific information required.
+'infobox card' is the class name of the table that Wikipedia uses for the player information. With this information, we can now use BeautifulSoup to extract the specific information required:
 
 ```python
   for tr in soup.find("table", {"class":"infobox vcard"}).findChildren('tr'):
@@ -71,7 +71,7 @@ By analysing the html code from a Wikipedia page, it is possible to uncover the 
     elif ignore_next == True:
       ignore_next = False
 ```
-The footballer_data list is now updated with the data gathered from the program.
+The footballer_data list is now updated with the data gathered from the program:
 
 ```python
  footballer_data.append(array)
