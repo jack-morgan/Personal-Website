@@ -49,3 +49,11 @@ Now that the program has access to the information from Wikipedia, we can use Be
 ```python
 soup = BeautifulSoup(html_ver, 'html.parser')
 ```
+
+Finally, the data that has been gathered from the parser is saved to the csv file previously created:
+
+```python
+  with open("playerhistory.csv", "a") as fp:
+    a = csv.writer(fp)
+    a.writerow(array)
+```
