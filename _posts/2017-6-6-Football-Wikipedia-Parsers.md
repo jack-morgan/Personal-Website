@@ -3,6 +3,6 @@ After playing numerous knowledge-based football games, it appeared to me that ex
 
 ### Modules used
 
-⋅⋅* BeautifulSoup
-⋅⋅* Wikipedia
-⋅⋅* csv
+* BeautifulSoup
+* Wikipedia
+* csv
