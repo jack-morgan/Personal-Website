@@ -89,3 +89,5 @@ Finally, the data that has been gathered from the parser is saved to the csv fil
 ### Conclusion
 
 This small project explores some of the capabilities of Python when used for text mining / parsing. It demonstrates that through the use of logic and experimentation, processes can be made more efficient, and thus in the long term reduce the amount of time spent on a trivial task.
+
+The full source code is available on [Github](https://github.com/jack-morgan/Football-Wikipedia-Scraper)
