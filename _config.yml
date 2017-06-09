@@ -1,5 +1,10 @@
 title: Jack Morgan
 description: Data Scientist in the Making | Engineering Mathematics at University of Bristol
+url: "http://www.jackhmorgan.com"
+author:
+  name: "Jack Morgan"
+  email: "morgan.jack22@gmail.com"
+  url: "http://jackhmorgan.com"
 twitter_username: jack_h_morgan
 github_username:  jack-morgan
 theme: jekyll-theme-cayman
