@@ -7,5 +7,43 @@ The aim of this project is to analyse the publicly available data of Washington 
 - Seaborn
 - Matplotlib
 
+```python
+import pandas as pd
+import numpy as np
+import seaborn as sns
+import matplotlib.pyplot as plt
+```
+
+## Pre-processing
+
+The most time consuming part of this project is the pre-processing: Ensuring that all the DataFrames are in the same format, and more importantly, in a format that enables analysis to be carried out.
+
+I have included only some of the pre-processing steps, so please feel free to check out the full source code on Github(PUT LINK HERE).
+
+#### Import CSV Files
+
+For each calendar year, we are provided with four CSV files (representing each quarter of the year). Using Pandas, we can read the CSV files into a DataFrame:
+
+```python
+Q1_2011 = pd.read_csv('Trip Data/2011-Q1.csv')
+Q2_2011 = pd.read_csv('Trip Data/2011-Q2.csv')
+Q3_2011 = pd.read_csv('Trip Data/2011-Q3.csv')
+Q4_2011 = pd.read_csv('Trip Data/2011-Q4.csv')
+```
+The four quarters are then concatenated into one DataFrame:
+
+```python
+Total2011 = pd.concat([Q1_2011,Q2_2011,Q3_2011,Q4_2011])
+```
+This process is repeated for the following years (2012,2013,2014,2015), with a final result of five DataFrames.
+
+#### Exploring the DataFrames
+
+The first thing to do is to have a look at the DataFrame. We can preview a DataFrame using the Pandas method ```python head()```
+
+```python
+Total2011.head()
+```
+
 
 
