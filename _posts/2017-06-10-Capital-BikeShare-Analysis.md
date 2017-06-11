@@ -39,11 +39,15 @@ This process is repeated for the following years (2012,2013,2014,2015), with a f
 
 #### Exploring the DataFrames
 
-The first thing to do is to have a look at the DataFrame. We can preview a DataFrame using the Pandas method ```python head()```
+The first thing to do is to have a look at the DataFrame. We can use Pandas `head()` method to preview the DataFrame.
 
 ```python
 Total2011.head()
 ```
+{% highlight r %}
+    Bike Key      Bike#     Duration      End Station     End date      Start Station     Start date      Subscriber Type     Subscription Type
+    NaN           NaN
+{% endhighlight %}
 
 
 
