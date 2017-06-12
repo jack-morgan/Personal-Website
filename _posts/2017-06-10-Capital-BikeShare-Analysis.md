@@ -46,7 +46,12 @@ Total2011.head()
 ```
 ![df2011](https://github.com/jack-morgan/Personal-Website/raw/gh-pages/Images/df11head.png "2011 DataFrame")
 
+We need to put all the DataFrames into the same format/layout so that it is easier to analyse. We can re-order the columns using `reindex_axis`, using `axis=1` to ensure we are reindexing the columns and not the rows. The columns can be renamed too:
 
+```python
+df11.reindex_axis(['Bike#','Duration','End station','End date','Start station','Start date','Member Type'],axis=1)
+df11.rename(columns={'End station':'End Station','Start station':'Start Station'},inplace=True)
+```
 
 
 
