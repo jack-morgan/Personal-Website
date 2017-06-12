@@ -44,7 +44,9 @@ The first thing to do is to have a look at the DataFrame. We can use Pandas `hea
 ```python
 Total2011.head()
 ```
-![HI](https://github.com/jack-morgan/Personal-Website/blob/gh-pages/Images/df11head.png "Hi")
+![HI](https://github.com/jack-morgan/Personal-Website/gh-pages/Images/df11head.png "Hi")
+
+![2](https://github.com/jack-morgan/Personal-Website/raw/master/Images/df11head.png "2")
 
 {% highlight r %}
     Duration        Start date     End date     Start station       End station     End date   Bike#   Member Type     
