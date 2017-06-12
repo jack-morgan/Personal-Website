@@ -52,7 +52,7 @@ We need to put all the DataFrames into the same format/layout so that it is easi
 df11.reindex_axis(['Bike#','Duration','End station','End date','Start station','Start date','Member Type'],axis=1)
 df11.rename(columns={'End station':'End Station','Start station':'Start Station'},inplace=True)
 ```
-#### Saving the DataFrames
+#### Save the DataFrames
 
 Obviously, it is possible to continue using the DataFrames in the same Jupyter Notebook as they are; however, I prefer saving the pre-processed data back to a CSV file in order to save time in the future and not have to re-run code. 
 
