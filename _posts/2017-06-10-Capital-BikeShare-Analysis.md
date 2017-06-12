@@ -49,5 +49,11 @@ Total2011.head()
     NaN           NaN
 {% endhighlight %}
 
+{% highlight r %}
+    Duration   state   cat_age   state_name
+1   53    WA      45-59     Washington
+2   47    OR      45-59     Oregon
+3   23    KS      18-29     Kansas
+{% endhighlight %}
 
 
