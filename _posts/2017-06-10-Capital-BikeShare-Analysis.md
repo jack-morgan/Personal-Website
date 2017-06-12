@@ -54,16 +54,19 @@ df11.rename(columns={'End station':'End Station','Start station':'Start Station'
 ```
 Now let's look at 2012:
 
-```python df2012.head()```
+```python df12.head()```
 
 ![df2012](https://github.com/jack-morgan/Personal-Website/raw/gh-pages/Images/df12head.png "2012 DataFrame")
 
 The columns 'Bike Key','Subscriber Type' and 'Subscription Type' are empty and useless, so we should delete them using the method `drop()`. The column 'Type' should be renamed to 'Member Type' to keep it in the same format as the previous DataFrame.
 
 ```python
-df2012.drop(df12.columns[[0,7,8]],1,inplace=True)
-df2012.rename(columns={'Type':'Member Type'},inplace=True)
+df12.drop(df12.columns[[0,7,8]],1,inplace=True)
+df12.rename(columns={'Type':'Member Type'},inplace=True)
 ```
+The argument `inplace=True` is used to make sure the changes are saved to the DataFrame.
+The other DataFrames are edited in the same way so that everything is uniform (please see here)(GITHUB LINK).
+
 #### Save the DataFrames
 
 Obviously, it is possible to continue using the DataFrames in the same Jupyter Notebook as they are; however, I prefer saving the pre-processed data back to a CSV file in order to save time in the future and not have to re-run code. 
@@ -75,8 +78,22 @@ df13.to_csv('2013.csv',index=False)
 df14.to_csv('2014.csv',index=False)
 df15.to_csv('2015.csv',index=False)
 ```
+The `index=False` argument is passed, as we do not want Pandas to create an index, as one already exists.
+
 ## Data Analysis
 
-A new Jupyter Notebook is created to make the workspace cleaner. We do not need the above notebook anymore, as we can simply import the new (pre-processed) CSV files.
+In the GitHub project, you will see a new Jupyter Notebook has been created to make the workspace cleaner. In the new Notebook we can simply import the new (pre-processed) CSV files.
 
+### Variation of Trips Throughout the Day
 
+In order to analyse the trip data by using the time/dates we need to do a few things. We can use pandas `DatetimeIndex()` for dealing with dates. We then use `date.astype()` to create an index with values cast to datetime64. From this we can return the hour `.hour` from the datetime object, the day of the week `.dayofweek`, and finally we format the string for Weekday Abberviate name (Sun, Mon, etc.) using `.strftime('%a')`.
+
+This code snippet displays how this is applied on one of the DataFrames:
+
+```python
+ind11 = pd.DatetimeIndex(df11['Start date']) #Use pandas.DatatimeIndex class for dealing with dates
+df11['date'] = ind11.date.astype('datetime64') #creates an index with values cast to dtypes
+df11['hour'] = ind11.hour #returns the hour from the datetime object
+df11['Dayofweek'] = ind11.dayofweek #returns the day of the week (Monday = 0, Sunday = 6)
+df11['DOW'] = ind11.strftime('%a') #%a is the format string for Weekday Abbreviated name (Sun,Mon, etc.)
+```
