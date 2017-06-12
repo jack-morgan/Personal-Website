@@ -86,7 +86,7 @@ In the GitHub project, you will see a new Jupyter Notebook has been created to m
 
 ### Variation of Trips Throughout the Day
 
-In order to analyse the trip data by using the time/dates we need to do a few things. We can use pandas `DatetimeIndex()` for dealing with dates. We then use `date.astype()` to create an index with values cast to datetime64. From this we can return the hour `.hour` from the datetime object, the day of the week `.dayofweek`, and finally we format the string for Weekday Abberviate name (Sun, Mon, etc.) using `.strftime('%a')`.
+In order to analyse the trip data by using the time/dates we need to do a few things. We can use pandas `DatetimeIndex()` for dealing with dates. We then use `date.astype()` to create an index with values cast to datetime64. From this we can return the hour `.hour` from the datetime object, the day of the week `.dayofweek`. Finally we can create a string representing the time under a specific format using the method `.strftime()`. We use `('%a')`, which is the format string for the abbreviated weekday names (Sun, Mon, etc.).
 
 This code snippet displays how this is applied on one of the DataFrames:
 
