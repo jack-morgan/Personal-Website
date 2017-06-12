@@ -44,16 +44,14 @@ The first thing to do is to have a look at the DataFrame. We can use Pandas `hea
 ```python
 Total2011.head()
 ```
-{% highlight r %}
-    Bike Key      Bike#     Duration      End Station     End date      Start Station     Start date      Subscriber Type     Subscription Type
-    NaN           NaN
-{% endhighlight %}
+![alt text](https://github.com/jack-morgan/Personal-Website/blob/gh-pages/Images/df11head.png)
 
 {% highlight r %}
-    Duration   state   cat_age   state_name
-1   53    WA      45-59     Washington
-2   47    OR      45-59     Oregon
-3   23    KS      18-29     Kansas
+    Duration        Start date     End date     Start station       End station     End date   Bike#   Member Type     
+1   NaN           NaN
+2
+3   
 {% endhighlight %}
+
 
 
