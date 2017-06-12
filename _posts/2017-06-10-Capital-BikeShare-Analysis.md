@@ -33,7 +33,7 @@ Q4_2011 = pd.read_csv('Trip Data/2011-Q4.csv')
 The four quarters are then concatenated into one DataFrame:
 
 ```python
-Total2011 = pd.concat([Q1_2011,Q2_2011,Q3_2011,Q4_2011])
+df2011 = pd.concat([Q1_2011,Q2_2011,Q3_2011,Q4_2011])
 ```
 This process is repeated for the following years (2012,2013,2014,2015), with a final result of five DataFrames.
 
@@ -42,7 +42,7 @@ This process is repeated for the following years (2012,2013,2014,2015), with a f
 The first thing to do is to have a look at the DataFrame. We can use Pandas `head()` method to preview the DataFrame.
 
 ```python
-Total2011.head()
+df2011.head()
 ```
 ![df2011](https://github.com/jack-morgan/Personal-Website/raw/gh-pages/Images/df11head.png "2011 DataFrame")
 
@@ -51,6 +51,18 @@ We need to put all the DataFrames into the same format/layout so that it is easi
 ```python
 df11.reindex_axis(['Bike#','Duration','End station','End date','Start station','Start date','Member Type'],axis=1)
 df11.rename(columns={'End station':'End Station','Start station':'Start Station'},inplace=True)
+```
+Now let's look at 2012:
+
+```python df2012.head()```
+
+![df2012](https://github.com/jack-morgan/Personal-Website/raw/gh-pages/Images/df12head.png "2012 DataFrame")
+
+The columns 'Bike Key','Subscriber Type' and 'Subscription Type' are empty and useless, so we should delete them using the method `drop()`. The column 'Type' should be renamed to 'Member Type' to keep it in the same format as the previous DataFrame.
+
+```python
+df2012.drop(df12.columns[[0,7,8]],1,inplace=True)
+df2012.rename(columns={'Type':'Member Type'},inplace=True)
 ```
 #### Save the DataFrames
 
