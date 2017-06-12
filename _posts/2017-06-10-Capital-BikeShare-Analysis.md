@@ -52,6 +52,19 @@ We need to put all the DataFrames into the same format/layout so that it is easi
 df11.reindex_axis(['Bike#','Duration','End station','End date','Start station','Start date','Member Type'],axis=1)
 df11.rename(columns={'End station':'End Station','Start station':'Start Station'},inplace=True)
 ```
+#### Saving the DataFrames
 
+Obviously, it is possible to continue using the DataFrames in the same Jupyter Notebook as they are; however, I prefer saving the pre-processed data back to a CSV file in order to save time in the future and not have to re-run code. 
+
+```python
+df11.to_csv('2011.csv',index=False)
+df12.to_csv('2012.csv',index=False)
+df13.to_csv('2013.csv',index=False)
+df14.to_csv('2014.csv',index=False)
+df15.to_csv('2015.csv',index=False)
+```
+## Data Analysis
+
+A new Jupyter Notebook is created to make the workspace cleaner. We do not need the above notebook anymore, as we can simply import the new (pre-processed) CSV files.
 
 
