@@ -46,7 +46,7 @@ Total2011.head()
 ```
 ![HI](https://github.com/jack-morgan/Personal-Website/gh-pages/Images/df11head.png "Hi")
 
-![2](https://github.com/jack-morgan/Personal-Website/raw/master/Images/df11head.png "2")
+![2](https://github.com/jack-morgan/Personal-Website/raw/gh-pages/Images/df11head.png "2")
 
 {% highlight r %}
     Duration        Start date     End date     Start station       End station     End date   Bike#   Member Type     
