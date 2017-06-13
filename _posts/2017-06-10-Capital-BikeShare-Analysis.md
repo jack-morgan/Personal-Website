@@ -97,3 +97,20 @@ df11['hour'] = ind11.hour #returns the hour from the datetime object
 df11['Dayofweek'] = ind11.dayofweek #returns the day of the week (Monday = 0, Sunday = 6)
 df11['DOW'] = ind11.strftime('%a') #%a is the format string for Weekday Abbreviated name (Sun,Mon, etc.)
 ```
+Now we can visualise this variation of trips throughout the day by using a combination of the Matplotlib and Seaborn libraries.  
+
+A title can be added to each axis instance in a figure. To set the title, we use the `set_title` method in the axes instance. Similarly we can set the labels of the X and Y axes using the methods `set_xlabel` and `set_ylabel`.
+
+Seaborn's countplot allows us to aggregate the data off a categorial feature, which in this case is `hour`. The countplot is similar to the barplot except that the estimator is explicitly counting the number of occurences (which is why we only pass the x value).
+
+A common issue with Matplolib is overlapping subplots or figures. We can use `plt.tight_layout()` method, which automatically adjusts the positions of the axes on the figure canvas so that there is no overlapping content.
+
+
+
+```python
+
+```
+
+![Totaltrips](https://github.com/jack-morgan/Personal-Website/raw/gh-pages/Images/Tripsbytimeofday.png "Timeofdaytrips")
+
+
