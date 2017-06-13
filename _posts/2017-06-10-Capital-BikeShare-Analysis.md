@@ -103,12 +103,26 @@ A title can be added to each axis instance in a figure. To set the title, we use
 
 Seaborn's countplot allows us to aggregate the data off a categorial feature, which in this case is `hour`. The countplot is similar to the barplot except that the estimator is explicitly counting the number of occurences (which is why we only pass the x value).
 
-A common issue with Matplolib is overlapping subplots or figures. We can use `plt.tight_layout()` method, which automatically adjusts the positions of the axes on the figure canvas so that there is no overlapping content.
+We plot each year side-by-side so that it is easier to compare visually. A common issue with Matplolib is overlapping subplots or figures. We can use `plt.tight_layout()` method, which automatically adjusts the positions of the axes on the figure canvas so that there is no overlapping content.
 
 
 
 ```python
-
+fig, axes = plt.subplots(nrows=1, ncols=5,figsize=(24,5),sharey=True)
+sns.countplot('hour',data=df11,order=range(25),palette="GnBu_d",ax=axes[0])
+sns.countplot('hour',data=df12,order=range(25),palette="GnBu_d",ax=axes[1])
+sns.countplot('hour',data=df13,order=range(25),palette="GnBu_d",ax=axes[2])
+sns.countplot('hour',data=df14,order=range(25),palette="GnBu_d",ax=axes[3])
+sns.countplot('hour',data=df15,order=range(25),palette="GnBu_d",ax=axes[4])
+for ax in axes:
+    ax.set_xlabel('Hour of the Day',fontsize=14)
+    ax.set_ylabel('Number of Journeys')
+axes[0].set_title('Total Trips by Time of Day - 2011',fontsize=16)
+axes[1].set_title('Total Trips by Time of Day - 2012',fontsize=16)
+axes[2].set_title('Total Trips by Time of Day - 2013',fontsize=16)
+axes[3].set_title('Total Trips by Time of Day - 2014',fontsize=16)
+axes[4].set_title('Total Trips by Time of Day - 2015',fontsize=16)
+plt.tight_layout()
 ```
 
 ![Totaltrips](https://github.com/jack-morgan/Personal-Website/raw/gh-pages/Images/Tripsbytimeofday.png "Timeofdaytrips")
