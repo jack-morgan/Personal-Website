@@ -103,7 +103,9 @@ A title can be added to each axis instance in a figure. To set the title, we use
 
 Seaborn's countplot allows us to aggregate the data off a categorial feature, which in this case is `hour`. The countplot is similar to the barplot except that the estimator is explicitly counting the number of occurences (which is why we only pass the x value).
 
-We plot each year side-by-side so that it is easier to compare visually. A common issue with Matplolib is overlapping subplots or figures. We can use `plt.tight_layout()` method, which automatically adjusts the positions of the axes on the figure canvas so that there is no overlapping content.
+We plot each year side-by-side so that it is easier to compare visually. We use the keyword argument `sharey=True` so that all the plots share the same y-axis, and thus 
+
+A common issue with Matplolib is overlapping subplots or figures. We can use `plt.tight_layout()` method, which automatically adjusts the positions of the axes on the figure canvas so that there is no overlapping content.
 
 
 
@@ -126,5 +128,9 @@ plt.tight_layout()
 ```
 
 ![Totaltrips](https://github.com/jack-morgan/Personal-Website/raw/gh-pages/Images/Tripsbytimeofday.png "Timeofdaytrips")
+
+From this it appears that every year shows very similar trends, whereby the peak times for trips are at around 8am and 6-7pm, coinciding with 'rush hour'.
+
+It is interesting to further investigate these trends, and look at the composition of these trips (whether the trips are taken by subscribers or casual users).
 
 
