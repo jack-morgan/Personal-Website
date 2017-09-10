@@ -20,12 +20,6 @@ We use `pandas head` method to preview the dataframe.
 ```python
 df_train.head()
 ```
-
-{% highlight r %}
-> colnames(shooting_data)
-[1]  "id"                      "name"                    "date"                    "manner_of_death"        
-[5]  "armed"                   "age"                     "gender"                  "race"                   
-[9]  "city"                    "state"                   "signs_of_mental_illness" "threat_level"           
-[13] "flee"                    "body_camera" {% endhighlight %}
+![df_train_head](https://github.com/jack-morgan/Personal-Website/raw/gh-pages/Images/titanic_head.png "Train DataFrame")
 
 
