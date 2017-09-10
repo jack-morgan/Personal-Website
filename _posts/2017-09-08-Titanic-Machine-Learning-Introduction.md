@@ -30,7 +30,6 @@ Before delving into the problem, it is best to visualise the data first. Using `
 plt.title('Sex of Survived')
 sns.countplot(x='Survived',hue='Sex',data=train_set)
 ```
-![survivedbysex](https://github.com/jack-morgan/Personal-Website/raw/gh-pages/Images/Survivedbysex.png "Plot of Survived")
 
 <img src="https://github.com/jack-morgan/Personal-Website/raw/gh-pages/Images/Survivedbysex.png" width="400" height="300" />
 
