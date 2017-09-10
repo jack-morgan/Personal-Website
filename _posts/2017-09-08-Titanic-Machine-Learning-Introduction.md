@@ -32,7 +32,7 @@ sns.countplot(x='Survived',hue='Sex',data=train_set)
 ```
 ![survivedbysex](https://github.com/jack-morgan/Personal-Website/raw/gh-pages/Images/Survivedbysex.png "Plot of Survived")
 
-<img src="https://github.com/jack-morgan/Personal-Website/raw/gh-pages/Images/Survivedbysex.png" width="200" height="200" />
+<img src="https://github.com/jack-morgan/Personal-Website/raw/gh-pages/Images/Survivedbysex.png" width="600" height="450" />
 
 
 
