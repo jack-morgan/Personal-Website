@@ -22,4 +22,15 @@ df_train.head()
 ```
 ![df_train_head](https://github.com/jack-morgan/Personal-Website/raw/gh-pages/Images/titanic_head.png "Train DataFrame")
 
+It is clear that all the variables are not needed; for this project only 
+
+Before delving into the problem, it is best to visualise the data first. Using `seaborn`'s `countplot` method we can gain insight into the distribution of survivors based on sex
+
+```python
+plt.title('Sex of Survived')
+sns.countplot(x='Survived',hue='Sex',data=train_set)
+```
+![survivedbysex](https://github.com/jack-morgan/Personal-Website/raw/gh-pages/Images/Survivedbysex.png "Plot of Survived")
+
+
 
