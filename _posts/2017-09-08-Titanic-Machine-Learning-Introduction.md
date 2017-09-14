@@ -32,3 +32,5 @@ sns.countplot(x='Survived',hue='Sex',data=train_set)
 ```
 
 <img src="https://github.com/jack-morgan/Personal-Website/raw/gh-pages/Images/Survivedbysex.png" width="400" height="300" />
+
+IN PROGRESS, PLEASE CHECK BACK SOON TO SEE THE FULL PROJECT!!
