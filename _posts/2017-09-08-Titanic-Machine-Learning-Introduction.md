@@ -49,7 +49,7 @@ X_train_ = df_train[['Sex','Fare','Age']]
 y_train = df_train['Survived']
 X_test = df_test[['Sex','Fare','Age']]
 ```
-Now it is necessary to import `scklearn`'s `DecisionTreeClassifier`. Now an instance of the classifier must be created, and then fitted to the data:
+Now it is necessary to import `sklearn`'s `DecisionTreeClassifier`. Now an instance of the classifier must be created, and then fitted to the data:
 
 ```python
 dtree = DecisionTreeClassifier()
