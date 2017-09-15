@@ -22,8 +22,6 @@ df_train.head()
 ```
 ![df_train_head](https://github.com/jack-morgan/Personal-Website/raw/gh-pages/Images/titanic_head.png "Train DataFrame")
 
-It is clear that all the variables are not needed; for this project only 
-
 Before delving into the problem, it is best to visualise the data first. Using `seaborn`'s `countplot` method we can gain insight into the distribution of survivors based on sex
 
 ```python
@@ -38,6 +36,25 @@ For the majority of machine learning algorithms, the values must be numeric and 
 ```python
 for df in [df_test,df_train]:
     df['Sex']=df['Sex'].apply(lambda x: 1 if x == 'male' else 0)
+```
+
+Part 1: Decision Tree Classifier
+
+A decision tree will be used to classify the data, and thus predict whether the passenger survived (1) or not (0).
+
+Only the 'Sex' and 'Fare' features will be used, so the other features can be dropped:
+
+
+```python
+df_train.drop(['PassengerId','Name','SibSp','Parch','Ticket','Cabin','Embarked','Pclass'],axis=1,inplace=True)
+df_test.drop(['PassengerId','Name','SibSp','Parch','Ticket','Cabin','Embarked','Pclass'],axis=1,inplace=True)
+```
+
+Furthermore, it is essential that there are no null values, as the ML algorithm will not accept these values. There are multiple methods to deal with null values, such as replacing the null with the features mean; however, for this example they will simply be deleted:
+
+```python
+df_train.dropna(inplace=True)
+df_test.dropna(inplace=True)
 ```
 
 IN PROGRESS --> PLEASE CHECK BACK SOON TO SEE THE FULL PROJECT!!
