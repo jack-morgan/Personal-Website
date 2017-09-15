@@ -33,4 +33,26 @@ sns.countplot(x='Survived',hue='Sex',data=train_set)
 
 <img src="https://github.com/jack-morgan/Personal-Website/raw/gh-pages/Images/Survivedbysex.png" width="400" height="300" />
 
+For the majority of machine learning algorithms, the values must be numeric and thus the 'sex' must be converted from male/female to 0/1:
+
+```python
+for df in [df_test,df_train]:
+    df['Sex']=df['Sex'].apply(lambda x: 1 if x == 'male' else 0)
+```
+
+IN PROGRESS --> PLEASE CHECK BACK SOON TO SEE THE FULL PROJECT!!
+
+The set containing the features (X) must be established, as well as the target value (Y):
+
+```python
+X_train_ = df_train[['Sex','Fare','Age']]
+y_train = df_train['Survived']
+X_test = df_test[['Sex','Fare','Age']]
+```
+Now it is necessary to import `scklearn`'s `DecisionTreeClassifier`. Now an instance of the classifier must be created, and then fitted to the data:
+
+```python
+dtree = DecisionTreeClassifier()
+dtree.fit(X_train,y_train)
+```
 IN PROGRESS, PLEASE CHECK BACK SOON TO SEE THE FULL PROJECT!!
