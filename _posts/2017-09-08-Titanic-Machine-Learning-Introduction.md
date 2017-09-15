@@ -72,4 +72,16 @@ Now it is necessary to import `sklearn`'s `DecisionTreeClassifier`. Now an insta
 dtree = DecisionTreeClassifier()
 dtree.fit(X_train,y_train)
 ```
+Now the decision tree can be used to make predictions on the target values of the test data (whether the passenger survived or not).
+
+```python
+tree_predictions = dtree.predict(X_test)
+```
+The decision tree can be visualised:
+
+```python
+from sklearn import tree
+tree.export_graphviz(dtree, out_file='DecisionTree2.dot')
+```
+
 IN PROGRESS, PLEASE CHECK BACK SOON TO SEE THE FULL PROJECT!!
