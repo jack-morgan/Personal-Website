@@ -34,16 +34,16 @@ sns.countplot(x='Survived',hue='Sex',data=train_set)
 
 <img src="https://github.com/jack-morgan/Personal-Website/raw/gh-pages/Images/Survivedbysex.png" width="400" height="300" />
 
-For the majority of machine learning algorithms, the values must be numeric and thus the 'sex' must be converted from male/female to 0/1:
+For the majority of machine learning algorithms, the values must be numeric and thus the 'sex' must be converted from male/female to 1/0:
 
 ```python
 for df in [df_test,df_train]:
     df['Sex']=df['Sex'].apply(lambda x: 1 if x == 'male' else 0)
 ```
 
-Part 1: Decision Tree Classifier
+## Part 1: Decision Tree Classifier (CAST)
 
-A decision tree will be used to classify the data, and thus predict whether the passenger survived (1) or not (0).
+A decision tree will be used to classify the data, and thus predict whether the passenger survived (1) or not (0). For information purposes, decision tree algorithms are also referred to as Classification and Regression Trees (CART). Decision trees are a quick and easy way to make predictions on data due to the fact that little preprocessing is required. The majority of machine learning algorithms (e.g. regression models) require the features to be scaled or normalised before fitting the model to the data; however, this is not necessary for decision trees as the tree structure is not affected. 
 
 Only the 'Sex' and 'Fare' features will be used, so the other features can be dropped:
 
