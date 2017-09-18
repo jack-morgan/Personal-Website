@@ -8,6 +8,9 @@ The [Titanic Kaggle Data Set](https://www.kaggle.com/c/titanic) is one of the mo
 - Seaborn
 - Scikitlearn
 
+
+## Preprocessing
+
 After importing the libraries, we need to read the data as a dataframe, using Pandas:
 
 ```python
@@ -83,5 +86,8 @@ The decision tree can be visualised:
 from sklearn import tree
 tree.export_graphviz(dtree, out_file='DecisionTree2.dot')
 ```
+<img src="https://github.com/jack-morgan/Personal-Website/raw/gh-pages/Images/tree.png"/>
+<img src="https://github.com/jack-morgan/Personal-Website/raw/gh-pages/Images/tree.png" width="400" height="300" />
+<img src="https://github.com/jack-morgan/Personal-Website/raw/gh-pages/Images/tree2.png" width="400" height="300" />
 
 IN PROGRESS, PLEASE CHECK BACK SOON TO SEE THE FULL PROJECT!!
