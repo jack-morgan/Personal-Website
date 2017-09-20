@@ -41,7 +41,7 @@ for df in [df_test,df_train]:
     df['Sex']=df['Sex'].apply(lambda x: 1 if x == 'male' else 0)
 ```
 
-## Part 1: Decision Tree Classifier (CAST)
+## Part 1: Decision Tree Classifier (CART)
 
 A decision tree will be used to classify the data, and thus predict whether the passenger survived (1) or not (0). For information purposes, decision tree algorithms are also referred to as Classification and Regression Trees (CART). Decision trees are a quick and easy way to make predictions on data due to the fact that little preprocessing is required. The majority of machine learning algorithms (e.g. regression models) require the features to be scaled or normalised before fitting the model to the data; however, this is not necessary for decision trees as the tree structure is not affected. 
 
@@ -60,9 +60,7 @@ df_train.dropna(inplace=True)
 df_test.dropna(inplace=True)
 ```
 
-IN PROGRESS --> PLEASE CHECK BACK SOON TO SEE THE FULL PROJECT!!
-
-The set containing the features (X) must be established, as well as the target value (Y):
+Now the training set containing the features (X) must be established, as well as the target value (Y):
 
 ```python
 X_train_ = df_train[['Sex','Fare','Age']]
@@ -87,5 +85,23 @@ from sklearn import tree
 tree.export_graphviz(dtree, out_file='DecisionTree2.dot')
 ```
 <img src="https://github.com/jack-morgan/Personal-Website/raw/gh-pages/Images/tree.png" width="680" height="400" />
+
+## Part 2: K Nearest Neighbours (KNN)
+
+### Standardise the variables
+
+Because the KNN classifier predicts the class of a given test observation by identifying the observations that are nearest to it, the scale of the variables matters. Any variables that are on a large scale will have a much larger effect on the distance between the observations (and hence on the KNN classifier), than variables that are on a small scale.
+
+```python
+from sklearn.preprocessing import StandardScaler
+scaler = StandardScaler()
+scaler.fit(dataclean)
+scaled_features = scaler.transform(dataclean)
+```
+Now transform the 'scaled_features' into a Pandas Dataframe:
+
+```python
+df_feat = pd.DataFrame(scaled_features,columns=dataclean.columns)
+```
 
 IN PROGRESS, PLEASE CHECK BACK SOON TO SEE THE FULL PROJECT!!
