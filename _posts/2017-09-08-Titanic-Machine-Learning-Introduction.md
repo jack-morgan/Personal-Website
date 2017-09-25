@@ -99,7 +99,7 @@ dataclean.dropna(inplace=True)
 ```
 We can preview the new dataframe now using the `head()` method:
 
-<img src="https://github.com/jack-morgan/Personal-Website/raw/gh-pages/Images/dataclean_KNN.png" width="350" height="200" />
+<img src="https://github.com/jack-morgan/Personal-Website/raw/gh-pages/Images/dataclean_KNN.png" width="350" height="170" />
 
 ### Standardise the variables
 
@@ -118,6 +118,29 @@ df_feat = pd.DataFrame(scaled_features,columns=dataclean.columns)
 ```
 <img src="https://github.com/jack-morgan/Personal-Website/raw/gh-pages/Images/datascaled_KNN.png" width="450" height="200" />
 
+### Predictions and Evaluation
+
+Now that the data is in the correct format, `scikit-learn`'s `train_test_split` method can be used to split the dataset into both a training and a testing set. This is useful as we do not have the target value for the testing set (whether the passenger survived or not). 
+
+```python
+from sklearn.cross_validation import train_test_split
+X_train, X_test, y_train, y_test = train_test_split(df_feat[['Pclass','Sex','Age','Fare']],dataclean['Survived'],test_size=0.3)```
+
+Similar to the decision tree classifier, an instance of the KNN classifier must be created and fit to the data:
+
+```python
+from sklearn.neighbors import KNeighborsClassifier
+knn = KNeighborsClassifier(n_neighbors=1)
+knn.fit(X_train,y_train)
+```
+The KNN classifier can now be used to make predictions, and the accuracy can also be evaluated:
+
+```python
+from sklearn.metrics import classification_report
+pred = knn.predict(X_test)
+print(classification_report(y_test,pred))```
+
+<img src="https://github.com/jack-morgan/Personal-Website/raw/gh-pages/Images/KNN_classificationReport.png" width="450" height="200" />
 
 ### Selecting a K Value
 
@@ -137,7 +160,9 @@ The error rate vs K-value is plot using `Matplotlib`:
 
 <img src="https://github.com/jack-morgan/Personal-Website/raw/gh-pages/Images/KNN_ErrorRate.png" width="450" height="300" />
 
-
 From the graph it is evident that after K=9 the error rate seems to oscillate. Now the classifier must be retrained with the new K-value (9).
 
-IN PROGRESS, PLEASE CHECK BACK SOON TO SEE THE FULL PROJECT!!
+After being retrained, the KNN classification report can be re-printed to view the accuracy of the model with a K-value of 9:
+
+<img src="https://github.com/jack-morgan/Personal-Website/raw/gh-pages/Images/KNN_K9_ClassificationReport.png" width="450" height="300" />
+
