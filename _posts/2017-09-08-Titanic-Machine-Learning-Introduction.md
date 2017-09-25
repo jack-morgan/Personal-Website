@@ -90,7 +90,7 @@ tree.export_graphviz(dtree, out_file='DecisionTree2.dot')
 
 ### Preprocessing
 
-For the KNN classifier, more features will be used. 
+For the KNN classifier, more features than the decision tree classifier will be used. Similar preprocessing methods are used in order to remove the unnecessary features, change the 'Sex' column values to binary, and also remove the null values:
 
 ```python
 dataclean = data.drop(['PassengerId','Ticket','Cabin','Embarked','Parch','Name'],axis=1)
@@ -116,5 +116,21 @@ Now transform the 'scaled_features' into a Pandas Dataframe:
 ```python
 df_feat = pd.DataFrame(scaled_features,columns=dataclean.columns)
 ```
+
+### Selecting a K Value
+
+The elbow method is used in order to pick an optimal k-value for the classifier.
+
+```python
+error_rate = []
+for i in range(1,40):
+    
+    knn = KNeighborsClassifier(n_neighbors=i)
+    knn.fit(X_train,y_train)
+    pred_i = knn.predict(X_test)
+    error_rate.append(np.mean(pred_i != y_test))
+```
+
+From the graph it is evident that after K=9 the error rate seems to oscillate. Now the classifier must be retrained with the new K-value (9).
 
 IN PROGRESS, PLEASE CHECK BACK SOON TO SEE THE FULL PROJECT!!
