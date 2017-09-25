@@ -128,7 +128,7 @@ X_train, X_test, y_train, y_test = train_test_split(df_feat[['Pclass','Sex','Age
 
 Similar to the decision tree classifier, an instance of the KNN classifier must be created and fit to the data:
 
-```python
+```
 from sklearn.neighbors import KNeighborsClassifier
 knn = KNeighborsClassifier(n_neighbors=1)
 knn.fit(X_train,y_train)
@@ -141,7 +141,7 @@ pred = knn.predict(X_test)
 print(classification_report(y_test,pred))
 ```
 
-<img src="https://github.com/jack-morgan/Personal-Website/raw/gh-pages/Images/KNN_classificationReport.png" />
+<img src="https://github.com/jack-morgan/Personal-Website/raw/gh-pages/Images/KNN_classificationReport.png" width="150" height="100"/>
 
 ### Selecting a K Value
 
