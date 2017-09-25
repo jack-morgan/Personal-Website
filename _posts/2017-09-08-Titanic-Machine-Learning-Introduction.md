@@ -116,6 +116,8 @@ Now transform the 'scaled_features' into a Pandas Dataframe:
 ```python
 df_feat = pd.DataFrame(scaled_features,columns=dataclean.columns)
 ```
+<img src="https://github.com/jack-morgan/Personal-Website/raw/gh-pages/Images/datascaled_KNN.png" width="350" height="200" />
+
 
 ### Selecting a K Value
 
