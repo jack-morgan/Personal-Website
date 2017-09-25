@@ -138,7 +138,8 @@ The KNN classifier can now be used to make predictions, and the accuracy can als
 ```python
 from sklearn.metrics import classification_report
 pred = knn.predict(X_test)
-print(classification_report(y_test,pred))```
+print(classification_report(y_test,pred))
+```
 
 <img src="https://github.com/jack-morgan/Personal-Website/raw/gh-pages/Images/KNN_classificationReport.png" width="450" height="200" />
 
