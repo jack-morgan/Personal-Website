@@ -133,8 +133,7 @@ for i in range(1,40):
 
 The error rate vs K-value is plot using `Matplotlib`:
 
-![ErrorRate_KNN](https://github.com/jack-morgan/Personal-Website/raw/gh-pages/Images/KNN_ErrorRate.png "Error_vs_Kvalue")
-<img src="https://github.com/jack-morgan/Personal-Website/raw/gh-pages/Images/KNN_ErrorRate.png" width="400" height="300" />
+<img src="https://github.com/jack-morgan/Personal-Website/raw/gh-pages/Images/KNN_ErrorRate.png" width="450" height="300" />
 
 
 From the graph it is evident that after K=9 the error rate seems to oscillate. Now the classifier must be retrained with the new K-value (9).
