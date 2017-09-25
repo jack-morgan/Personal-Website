@@ -88,6 +88,19 @@ tree.export_graphviz(dtree, out_file='DecisionTree2.dot')
 
 ## Part 2: K Nearest Neighbours (KNN)
 
+### Preprocessing
+
+For the KNN classifier, more features will be used. 
+
+```python
+dataclean = data.drop(['PassengerId','Ticket','Cabin','Embarked','Parch','Name'],axis=1)
+dataclean['Sex']=dataclean['Sex'].apply(lambda x: 1 if x == 'male' else 0)
+dataclean.dropna(inplace=True)
+```
+We can preview the new dataframe now using the `head()` method:
+
+insert picture here
+
 ### Standardise the variables
 
 Because the KNN classifier predicts the class of a given test observation by identifying the observations that are nearest to it, the scale of the variables matters. Any variables that are on a large scale will have a much larger effect on the distance between the observations (and hence on the KNN classifier), than variables that are on a small scale.
