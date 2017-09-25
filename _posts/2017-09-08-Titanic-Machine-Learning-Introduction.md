@@ -141,7 +141,7 @@ pred = knn.predict(X_test)
 print(classification_report(y_test,pred))
 ```
 
-<img src="https://github.com/jack-morgan/Personal-Website/raw/gh-pages/Images/KNN_classificationReport.png" width="450" height="200" />
+<img src="https://github.com/jack-morgan/Personal-Website/raw/gh-pages/Images/KNN_classificationReport.png" />
 
 ### Selecting a K Value
 
@@ -165,5 +165,5 @@ From the graph it is evident that after K=9 the error rate seems to oscillate. N
 
 After being retrained, the KNN classification report can be re-printed to view the accuracy of the model with a K-value of 9:
 
-<img src="https://github.com/jack-morgan/Personal-Website/raw/gh-pages/Images/KNN_K9_ClassificationReport.png" width="450" height="300" />
+<img src="https://github.com/jack-morgan/Personal-Website/raw/gh-pages/Images/KNN_K9_ClassificationReport.png" width="450" height="200" />
 
