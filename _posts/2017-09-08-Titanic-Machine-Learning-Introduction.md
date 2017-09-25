@@ -124,7 +124,8 @@ Now that the data is in the correct format, `scikit-learn`'s `train_test_split` 
 
 ```python
 from sklearn.cross_validation import train_test_split
-X_train, X_test, y_train, y_test = train_test_split(df_feat[['Pclass','Sex','Age','Fare']],dataclean['Survived'],test_size=0.3)```
+X_train, X_test, y_train, y_test = train_test_split(df_feat[['Pclass','Sex','Age','Fare']],dataclean['Survived'],test_size=0.3)
+```
 
 Similar to the decision tree classifier, an instance of the KNN classifier must be created and fit to the data:
 
