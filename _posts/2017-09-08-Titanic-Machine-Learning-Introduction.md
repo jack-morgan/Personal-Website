@@ -99,7 +99,7 @@ dataclean.dropna(inplace=True)
 ```
 We can preview the new dataframe now using the `head()` method:
 
-<img src="https://github.com/jack-morgan/Personal-Website/raw/gh-pages/Images/dataclean_KNN.png" width="500" height="200" />
+<img src="https://github.com/jack-morgan/Personal-Website/raw/gh-pages/Images/dataclean_KNN.png" width="350" height="200" />
 
 ### Standardise the variables
 
@@ -116,7 +116,7 @@ Now transform the 'scaled_features' into a Pandas Dataframe:
 ```python
 df_feat = pd.DataFrame(scaled_features,columns=dataclean.columns)
 ```
-<img src="https://github.com/jack-morgan/Personal-Website/raw/gh-pages/Images/datascaled_KNN.png" width="350" height="200" />
+<img src="https://github.com/jack-morgan/Personal-Website/raw/gh-pages/Images/datascaled_KNN.png" width="450" height="200" />
 
 
 ### Selecting a K Value
