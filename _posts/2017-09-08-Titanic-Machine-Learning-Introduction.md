@@ -141,7 +141,7 @@ pred = knn.predict(X_test)
 print(classification_report(y_test,pred))
 ```
 
-<img src="https://github.com/jack-morgan/Personal-Website/raw/gh-pages/Images/KNN_classificationReport.png" width="150" height="250"/>
+<img src="https://github.com/jack-morgan/Personal-Website/raw/gh-pages/Images/KNN_classificationReport.png" width="250" height="150"/>
 
 ### Selecting a K Value
 
