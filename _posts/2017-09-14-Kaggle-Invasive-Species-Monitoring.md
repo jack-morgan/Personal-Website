@@ -136,10 +136,9 @@ results = model_selection.cross_val_score(model, train_data, labels, cv=kf)
 print("Mean Accuracy: {:.3f}%\nStd Deviation: ({:.3f}%)".format(results.mean()*100, results.std()*100))
 ```
 
-``
-Accuracy: 86.492% <br />
-Mean Accuracy: 81.395% <br />
-Std Deviation: 2.512%
-``
+``Accuracy: 86.492% ``
+``Mean Accuracy: 81.395%``
+``Std Deviation: 2.512%``
+
 
 We don't use the model instances trained during cross-validation for the final predictive model. The model would be trained on the full training dataset, and predictions would be made on the test dataset.
