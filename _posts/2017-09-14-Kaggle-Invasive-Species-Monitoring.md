@@ -46,4 +46,8 @@ def load_train_images(img_paths, labels_csv):
     return images, labels
 ```
 
+## Local Binary Patterns
+
+For more information on local binary patterns please [click here](https://www.pyimagesearch.com/2015/12/07/local-binary-patterns-with-python-opencv/)
+
 PLEASE COME BACK SOON TO SEE THE FULL PROJECT!!
