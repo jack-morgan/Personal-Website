@@ -50,7 +50,7 @@ def load_train_images(img_paths, labels_csv):
 
 For more information on local binary patterns please [click here](https://www.pyimagesearch.com/2015/12/07/local-binary-patterns-with-python-opencv/)
 
-This function takes the list of images we created previously and compute the LBP histogram of each image and return a new list with the corresponding LBP features of each image.
+This function takes the list of images we created previously, computes the LBP histogram of each image and returns a new list with the corresponding LBP features of each image.
 
 ```python
 def generate_lbp(images, num_points, radius):
