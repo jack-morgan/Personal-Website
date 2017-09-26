@@ -13,7 +13,7 @@ A [Kaggle Project](https://www.kaggle.com/c/invasive-species-monitoring) using a
 
 ## Preprocessing
 
-The first step Import the training target values provided by Kaggle using `pandas`:
+The first step is to import the training target values provided by Kaggle using `pandas`:
 
 ```python
 labels_csv = pd.read_csv('train_labels.csv')
