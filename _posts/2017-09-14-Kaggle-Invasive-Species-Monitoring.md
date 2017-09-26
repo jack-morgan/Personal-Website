@@ -136,7 +136,7 @@ results = model_selection.cross_val_score(model, train_data, labels, cv=kf)
 print("Mean Accuracy: {:.3f}%\nStd Deviation: ({:.3f}%)".format(results.mean()*100, results.std()*100))
 ```
 
-| Tables        | Value        |
+| Measure       | Value        |
 | ------------- |:-----------:|
 | Accuracy      | 86.492% |
 | Mean Accuracy    | 81.395%      |
