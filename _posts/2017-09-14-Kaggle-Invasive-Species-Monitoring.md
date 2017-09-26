@@ -50,4 +50,35 @@ def load_train_images(img_paths, labels_csv):
 
 For more information on local binary patterns please [click here](https://www.pyimagesearch.com/2015/12/07/local-binary-patterns-with-python-opencv/)
 
+This function takes the list of images we created previously and compute the LBP histogram of each image and return a new list with the corresponding LBP features of each image.
+
+```python
+def generate_lbp(images, num_points, radius):
+    data = []
+
+    # loop through the images list using enumerate because it returns the element
+    # of the list (img) as well as the index of the corresponding image (i)
+    
+    for i, img in enumerate(images):
+        # num_points and radius are parameters that also affect classification
+        # performance. We'll need to test different configurations of it.
+        # The values I chose to test were an "educated guess", but also arbitrary based
+        # on image size.
+        lbp = feature.local_binary_pattern(img, num_points, radius, method='uniform')
+        
+        # The image itself is not the feature vector, the histogram of each LBP code
+        # generated from the image is. 
+        
+        (hist, _) = np.histogram(lbp.ravel(), bins=np.arange(0, num_points + 3), range=(0, num_points + 2))
+
+        # convert histogram to float values and normalise.
+        hist = hist.astype('float')
+        hist /= hist.sum()
+
+        # I printed the index to view the progress in the console.
+        print(i)
+        data.append(hist)
+    return data
+```
+
 PLEASE COME BACK SOON TO SEE THE FULL PROJECT!!
