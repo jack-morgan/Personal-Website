@@ -140,5 +140,10 @@ print("Mean Accuracy: {:.3f}%\nStd Deviation: ({:.3f}%)".format(results.mean()*1
 ``Mean Accuracy: 81.395%``
 ``Std Deviation: 2.512%``
 
+| Tables        | Are           | Cool  |
+| ------------- |:-------------:| -----:|
+| col 3 is      | right-aligned | $1600 |
+| col 2 is      | centered      |   $12 |
+| zebra stripes | are neat      |    $1 |
 
 We don't use the model instances trained during cross-validation for the final predictive model. The model would be trained on the full training dataset, and predictions would be made on the test dataset.
