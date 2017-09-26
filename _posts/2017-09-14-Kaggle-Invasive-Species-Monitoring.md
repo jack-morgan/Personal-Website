@@ -1,4 +1,7 @@
-Kaggle Project using a combination of computer vision and machine learning to automatically classify images and determine whether they contain an invasive hydrangea plant
+A [Kaggle Project](https://www.kaggle.com/c/invasive-species-monitoring) using a combination of computer vision and machine learning to automatically classify images and determine whether they contain an invasive hydrangea plant.
+
+<img src="https://github.com/jack-morgan/Personal-Website/raw/gh-pages/Images/invasiveIntro.png" width="400" height="300" />
+
 
 ## Libraries Used
 
