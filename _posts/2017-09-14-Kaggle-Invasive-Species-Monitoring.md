@@ -97,4 +97,27 @@ train_data = pd.concat([train_data, pd.DataFrame(labels_list)], axis=1)
 train_data.to_csv('train_data.csv', index=False)
 ```
 
+## Classification / Machine Learning
+
+In python, a new file was created for this section, as technically everything previously done was 'preprocessing'. For continuity purposes I will include a code snippet showing how the data previously generated, was imported and seperate the labels array:
+
+```python
+data = pd.read_csv('train_data.csv')
+train_data = data.values[:,:-1]
+labels = data.values[:,-1]
+```
+Now that the data is in the correct format, `scikit-learn`’s `train_test_split` method can be used to split the dataset into both a training and a testing set. This is useful as we do not have the target value for the testing set, and thus it now allows us to evaluate each model.
+
+```python
+X_train, X_test, y_train, y_test = model_selection.train_test_split(train_data, labels, test_size=0.2, random_state=42)
+```
+It is possible to use a variety of different models to classify these images: SVC, DecisionTree, KNN, MLP; however, the `RandomForest` classifier achieved the highest accuracy. Obviously it is important to note that overfitting a model can be detrimental to a classification problem. Just because a model works well on training data, it doesn't mean that it will perform well on new, unseen data. Normally, it is better to create a more general model instead of trying ensure that the model gets 99% accuracy on training data.
+
+```python
+model = RandomForestClassifier()
+model.fit(X_train, y_train)
+result = model.score(X_test, y_test)
+print('Accuracy: {:.3f}%'.format(result*100))
+```
+
 PLEASE COME BACK SOON TO SEE THE FULL PROJECT!!
