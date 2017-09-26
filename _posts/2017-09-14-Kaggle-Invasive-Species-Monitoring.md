@@ -137,8 +137,8 @@ print("Mean Accuracy: {:.3f}%\nStd Deviation: ({:.3f}%)".format(results.mean()*1
 ```
 
 ``
-Accuracy: 86.492%
-Mean Accuracy: 81.395%
+Accuracy: 86.492% \n
+Mean Accuracy: 81.395% \n
 Std Deviation: 2.512%
 ``
 
