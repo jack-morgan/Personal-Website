@@ -31,6 +31,9 @@ def load_train_images(img_paths, labels_csv):
     labels = []
     for i in img_paths:
         row = int(i.split('.')[0])
+        # i.split('.') => e.g. ['1', 'jpg']
+        # I want the first element of the list, that's why there's a [0]
+        
         forest_class = labels_csv.iloc[row - 1]['invasive']
         img = cv2.imread('train/' + i, cv2.IMREAD_GRAYSCALE)
         
