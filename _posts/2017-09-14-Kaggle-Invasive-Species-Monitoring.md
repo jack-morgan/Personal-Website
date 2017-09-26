@@ -111,7 +111,11 @@ Now that the data is in the correct format, `scikit-learn`’s `train_test_split
 ```python
 X_train, X_test, y_train, y_test = model_selection.train_test_split(train_data, labels, test_size=0.2, random_state=42)
 ```
-It is possible to use a variety of different models to classify these images: SVC, DecisionTree, KNN, MLP; however, the `RandomForest` classifier achieved the highest accuracy. Obviously it is important to note that overfitting a model can be detrimental to a classification problem. Just because a model works well on training data, it doesn't mean that it will perform well on new, unseen data. Normally, it is better to create a more general model instead of trying ensure that the model gets 99% accuracy on training data.
+It is possible to use a variety of different models to classify these images: SVC, DecisionTree, KNN, MLP; however, the `RandomForest` classifier achieved the highest accuracy (discussed in more detail below). 
+
+Obviously it is important to note that overfitting a model can be detrimental to a classification problem. Just because a model works well on training data, it doesn't mean that it will perform well on new, unseen data. Normally, it is better to create a more general model instead of trying ensure that the model gets 99% accuracy on training data.
+
+The `RandomForestClassifier` can now be initiated, fit to the data and the accuracy of the model can be calculated:
 
 ```python
 model = RandomForestClassifier()
@@ -120,4 +124,22 @@ result = model.score(X_test, y_test)
 print('Accuracy: {:.3f}%'.format(result*100))
 ```
 
-PLEASE COME BACK SOON TO SEE THE FULL PROJECT!!
+### Extra - Model Scoring / Evaluation
+
+Earlier we split the training set 80/20 so that we could evaluate each model; however, what happens if the 20% picked for testing was particularly easy/hard to classify?
+
+In order to overcome this problem, we can use `K-Fold Cross-Validation`. We could use 10 fold cross-validation to train the model 10 times on 80% of the data and testing on 20%. The purpose of cross-validation is model evaluation not model building. K-Fold cross-validation allows a linear regression model and a neural network to be fairly compared to ascertain which model is better.
+
+```python
+kf = model_selection.KFold(n_splits=10, random_state=42)
+results = model_selection.cross_val_score(model, train_data, labels, cv=kf)
+print("Mean Accuracy: {:.3f}%\nStd Deviation: ({:.3f}%)".format(results.mean()*100, results.std()*100))
+```
+
+``
+Accuracy: 86.492%
+Mean Accuracy: 81.395%
+Std Deviation: 2.512%
+``
+
+We don't use the model instances trained during cross-validation for the final predictive model. The model would be trained on the full training dataset, and predictions would be made on the test dataset.
