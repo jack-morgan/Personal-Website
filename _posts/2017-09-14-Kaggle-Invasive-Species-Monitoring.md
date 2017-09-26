@@ -75,4 +75,26 @@ def generate_lbp(images, num_points, radius):
 ```
 The image itself is not the feature vector. A histogram of each LBP code must be generated from the image in order to generate the feature vector, using `np.histogram` in the above function.
 
+The functions have been created, and now we need to make use of them!!
+
+```python
+''' generating training data '''
+print('loading images and labels...')
+train_images, labels_list = load_train_images(img_paths, labels_csv)
+print('generating training data...')
+# generating LBP with arbitrary num_points and radius parameters
+train_data = generate_lbp(train_images, 24, 8)
+```
+The `train_data` should be converted to a `Pandas DataFrame` in order to make the information easier to use in the future.
+
+```python
+train_data = pd.DataFrame(train_data)
+```
+The labels columns must be appended to the features vector (train_data), and finally our data should be exported to a csv file so that the data can simply be imported when needed.
+
+```python
+train_data = pd.concat([train_data, pd.DataFrame(labels_list)], axis=1)
+train_data.to_csv('train_data.csv', index=False)
+```
+
 PLEASE COME BACK SOON TO SEE THE FULL PROJECT!!
