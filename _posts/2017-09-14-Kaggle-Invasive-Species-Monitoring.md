@@ -30,8 +30,10 @@ def load_train_images(img_paths, labels_csv):
         row = int(i.split('.')[0])
         forest_class = labels_csv.iloc[row - 1]['invasive']
         img = cv2.imread('train/' + i, cv2.IMREAD_GRAYSCALE)
+        
         # I resized every image into and arbitrary size to make processing time faster
         # However, this affects classification rate.
+        
         img_resized = cv2.resize(img, dsize=(500, 300))
         images.append(img_resized)
         labels.append(forest_class)
