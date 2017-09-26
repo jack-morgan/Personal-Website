@@ -35,7 +35,6 @@ def load_train_images(img_paths, labels_csv):
         img_resized = cv2.resize(img, dsize=(500, 300))
         images.append(img_resized)
         labels.append(forest_class)
-    return images, labels
-    ```
+    return images, labels```
 
 PLEASE COME BACK SOON TO SEE THE FULL PROJECT!!
