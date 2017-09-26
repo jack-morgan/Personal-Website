@@ -60,15 +60,8 @@ def generate_lbp(images, num_points, radius):
     # of the list (img) as well as the index of the corresponding image (i)
     
     for i, img in enumerate(images):
-        # num_points and radius are parameters that also affect classification
-        # performance. We'll need to test different configurations of it.
-        # The values I chose to test were an "educated guess", but also arbitrary based
-        # on image size.
+        # Calculate lbp and create histogram of each image
         lbp = feature.local_binary_pattern(img, num_points, radius, method='uniform')
-        
-        # The image itself is not the feature vector, the histogram of each LBP code
-        # generated from the image is. 
-        
         (hist, _) = np.histogram(lbp.ravel(), bins=np.arange(0, num_points + 3), range=(0, num_points + 2))
 
         # convert histogram to float values and normalise.
@@ -80,5 +73,6 @@ def generate_lbp(images, num_points, radius):
         data.append(hist)
     return data
 ```
+The image itself is not the feature vector. A histogram of each LBP code must be generated from the image in order to generate the feature vector, using `np.histogram` in the above function.
 
 PLEASE COME BACK SOON TO SEE THE FULL PROJECT!!
